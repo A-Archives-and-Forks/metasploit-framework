@@ -111861,6 +111861,68 @@
     "session_types": false,
     "needs_cleanup": true
   },
+  "exploit_multi/http/monsta_ftp_downloadfile_rce": {
+    "name": "Monsta FTP downloadFile Remote Code Execution",
+    "fullname": "exploit/multi/http/monsta_ftp_downloadfile_rce",
+    "aliases": [],
+    "rank": 600,
+    "disclosure_date": "2025-11-07",
+    "type": "exploit",
+    "author": [
+      "watchTowr Labs",
+      "Valentin Lobstein <chocapikk@leakix.net>",
+      "msutovsky-r7"
+    ],
+    "description": "This module exploits a pre-authenticated remote code execution vulnerability\n          in Monsta FTP versions < 2.11.3. The vulnerability exists in the downloadFile\n          action which allows an attacker to connect to a malicious FTP or SFTP server\n          and download arbitrary files to arbitrary locations on the Monsta FTP server.\n          This module uses FTP to exploit the vulnerability.",
+    "references": [
+      "CVE-2025-34299",
+      "URL-https://labs.watchtowr.com/monsta-ftp-remote-code-execution-cve-2025-34299/"
+    ],
+    "platform": "Linux,PHP,Unix,Windows",
+    "arch": "php, cmd",
+    "rport": 80,
+    "autofilter_ports": [
+      80,
+      8080,
+      443,
+      8000,
+      8888,
+      8880,
+      8008,
+      3000,
+      8443
+    ],
+    "autofilter_services": [
+      "http",
+      "https"
+    ],
+    "targets": [
+      "PHP In-Memory",
+      "Unix/Linux Command Shell",
+      "Windows Command Shell"
+    ],
+    "mod_time": "2025-11-26 18:27:52 +0000",
+    "path": "/modules/exploits/multi/http/monsta_ftp_downloadfile_rce.rb",
+    "is_install_path": true,
+    "ref_name": "multi/http/monsta_ftp_downloadfile_rce",
+    "check": true,
+    "post_auth": false,
+    "default_credential": false,
+    "notes": {
+      "Stability": [
+        "crash-safe"
+      ],
+      "Reliability": [
+        "repeatable-session"
+      ],
+      "SideEffects": [
+        "artifacts-on-disk",
+        "ioc-in-logs"
+      ]
+    },
+    "session_types": false,
+    "needs_cleanup": true
+  },
   "exploit_multi/http/monstra_fileupload_exec": {
     "name": "Monstra CMS Authenticated Arbitrary File Upload",
     "fullname": "exploit/multi/http/monstra_fileupload_exec",
